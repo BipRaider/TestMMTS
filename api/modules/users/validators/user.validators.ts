@@ -1,8 +1,8 @@
 'use strict';
 
-const Joi = require('joi');
+import { TErorr } from 'api/types/types';
 
-const { checkedId } = require('../../helpers');
+const Joi = require('joi');
 
 module.exports = class ValidatorCategory {
    static validateCategory(req, res, next) {
@@ -13,7 +13,7 @@ module.exports = class ValidatorCategory {
       const val = validationCategory.validate(req.body);
 
       if (val.error) {
-         const err = new Error('Invalid request body');
+         const err: TErorr = new Error('Invalid request body');
          err.code = 400;
          throw err;
       }
@@ -28,12 +28,11 @@ module.exports = class ValidatorCategory {
       const val = validationCategory.validate(req.body);
 
       if (val.error) {
-         const err = new Error('Invalid request body');
+         const err: TErorr = new Error('Invalid request body');
          err.code = 400;
          throw err;
       }
 
-      checkedId(val.value.id);
       next();
    }
 };

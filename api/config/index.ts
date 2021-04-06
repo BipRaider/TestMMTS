@@ -1,11 +1,13 @@
 'use strict';
 
+import { TErorr } from 'api/types/types';
+
 const path = require('path');
 
 try {
    require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 } catch (error) {
-   const err = new Error('Dotenv error');
+   const err: TErorr = new Error('Dotenv error');
    err.code = 500;
    throw err;
 }

@@ -1,4 +1,7 @@
 'use strict';
+
+import { TErorr } from './types/types';
+
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
@@ -12,6 +15,8 @@ const config = require('./config');
 const { connectionUsersDB } = require('./data');
 
 module.exports = class BeckEND {
+   server: any;
+
    constructor() {
       this.server = null;
    }
@@ -45,7 +50,7 @@ module.exports = class BeckEND {
       router(this.server);
 
       this.server.use((req, res, next) => {
-         const error = new Error('Resource not found');
+         const error: TErorr = new Error('Resource not found');
          error.code = 404;
          next(error);
       });

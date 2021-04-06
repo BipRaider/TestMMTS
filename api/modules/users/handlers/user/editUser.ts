@@ -1,13 +1,16 @@
 'use strick';
 
+import { TErorr } from 'api/types/types';
+import { TUser, TUserDB } from '../types/types';
+
 const User = require('../../model');
 
-module.exports = async ({ name, age, id }) => {
+export default async ({ name, age, id }: TUser): Promise<void> => {
    try {
-      const user = await User.findByPk(id);
+      const user: TUserDB = await User.findByPk(id);
 
       if (!user) {
-         const err = new Error(`Is't found user`);
+         const err: TErorr = new Error(`Is't found user`);
          err.code = 404;
          throw err;
       }

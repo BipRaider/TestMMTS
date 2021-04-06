@@ -1,8 +1,8 @@
 'use strict';
+import { Router } from 'express';
 
-const { Router } = require('express');
+import UserController from '../controllers/users.controller';
 
-const UserController = require('../controllers/users.controller');
 // const CategoryValidator = require('../validators/category.validators');
 const userRouter = Router();
 
@@ -18,4 +18,4 @@ userRouter.post('/edit', UserController.editUser);
 
 userRouter.post('/delete/:id', UserController.deleteUser);
 
-module.exports = userRouter;
+export default userRouter;

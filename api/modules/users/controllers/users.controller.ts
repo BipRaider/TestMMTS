@@ -1,15 +1,13 @@
 'use strict';
 
-const { getListUser, createUser, deleteUser, editUser, findUser } = require('../handlers/user');
+import { createUser, findUser, getListUser, editUser, deleteUser } from '../handlers/user';
 
-module.exports = class UserController {
+export default class UserController {
    static async getListUser(req, res, next) {
       try {
-         const data = await getListUser();
+         const users = await getListUser();
 
-         return res.render('index.hbs', {
-            users: data,
-         });
+         return res.render('index.hbs', { users });
       } catch (error) {
          next(error);
       }
@@ -18,6 +16,7 @@ module.exports = class UserController {
    static async formCreateUser(req, res, next) {
       try {
          if (!req.body) return res.sendStatus(400);
+
          return res.status(200).render('create.hbs');
       } catch (error) {
          next(error);
@@ -27,6 +26,7 @@ module.exports = class UserController {
    static async createUser(req, res, next) {
       try {
          await createUser(req.body);
+
          res.redirect('/api');
       } catch (error) {
          next(error);
@@ -38,7 +38,7 @@ module.exports = class UserController {
          const user = await findUser(req.params);
 
          return res.status(200).render('edit.hbs', {
-            user: user[0],
+            user: user,
          });
       } catch (error) {
          next(error);
@@ -66,4 +66,4 @@ module.exports = class UserController {
          next(error);
       }
    }
-};
+}

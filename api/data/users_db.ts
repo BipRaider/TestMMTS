@@ -1,11 +1,13 @@
 'use strick';
 
+import { TErorr } from 'api/types/types';
+
 const Sequelize = require('sequelize');
 const config = require('../config');
 
 const { root_db, password_db, host_db, port_db } = config;
 
-const db = () => {
+const db = (): any => {
    try {
       const sequelize = new Sequelize('usersdb', root_db, password_db, {
          dialect: 'mysql',
@@ -21,7 +23,7 @@ const db = () => {
       }
       return sequelize;
    } catch (error) {
-      const err = new Error('Not connect db');
+      const err: TErorr = new Error('Not connect db');
       err.code = 500;
       return err;
    }
