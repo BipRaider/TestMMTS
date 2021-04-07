@@ -1,11 +1,11 @@
 'use strick';
 
 const { Sequelize, Model } = require('sequelize');
-const { connectionUsersDB } = require('../../../data');
+import { connectionUsersDB } from '../../../data';
 
 class User extends Model {}
 
-module.exports = User.init(
+export default User.init(
    {
       id: {
          type: Sequelize.INTEGER,

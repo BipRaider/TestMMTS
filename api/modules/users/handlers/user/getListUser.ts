@@ -1,8 +1,8 @@
 'use strick';
 
-import { TUser } from '../types/types';
+import { TUser } from '../../types/types';
 
-const User = require('../../model');
+import User from '../../model';
 
 export default async (): Promise<TUser[]> => {
    try {

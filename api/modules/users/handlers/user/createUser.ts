@@ -1,9 +1,9 @@
 'use strict';
 
 import { TErorr } from 'api/types/types';
-import { TCreatUser } from '../types/types';
+import { TCreatUser } from '../../types/types';
 
-const User = require('../../model');
+import User from '../../model';
 
 export default async ({ name, age }: TCreatUser): Promise<void> => {
    try {

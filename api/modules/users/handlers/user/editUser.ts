@@ -1,9 +1,9 @@
 'use strick';
 
 import { TErorr } from 'api/types/types';
-import { TUser, TUserDB } from '../types/types';
+import { TUser, TUserDB } from '../../types/types';
 
-const User = require('../../model');
+import User from '../../model';
 
 export default async ({ name, age, id }: TUser): Promise<void> => {
    try {

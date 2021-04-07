@@ -29,4 +29,4 @@ const db = (): any => {
    }
 };
 
-module.exports = db();
+export default db();

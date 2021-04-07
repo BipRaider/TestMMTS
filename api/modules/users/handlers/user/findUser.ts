@@ -1,9 +1,9 @@
 'use strick';
 
 import { TErorr } from 'api/types/types';
-import { TId, TUser } from '../types/types';
+import { TId, TUser } from '../../types/types';
 
-const User = require('../../model');
+import User from '../../model';
 
 export default async ({ id }: TId): Promise<TUser> => {
    try {

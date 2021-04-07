@@ -1,6 +1,7 @@
 'use strict';
 
 import { TErorr } from './types/types';
+import { connectionUsersDB } from './data';
 
 const path = require('path');
 const express = require('express');
@@ -12,7 +13,6 @@ hbs.registerPartials(path.join(__dirname, '../views/partials'));
 
 const router = require('./router');
 const config = require('./config');
-const { connectionUsersDB } = require('./data');
 
 module.exports = class BeckEND {
    server: any;

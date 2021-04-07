@@ -1,1 +1,1 @@
-exports.connectionUsersDB = require('./users_db');
+export { default as connectionUsersDB } from './users_db';
