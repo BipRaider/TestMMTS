@@ -1,8 +1,7 @@
 'use strict';
+import path from 'path';
 
 import { TErorr } from 'api/types/types';
-
-const path = require('path');
 
 try {
    require('dotenv').config({ path: path.join(__dirname, '../../.env') });
@@ -14,7 +13,7 @@ try {
 
 const { ROOT_DB, PASSWORD_DB, PORT_DB, PORT, HOST_DB, CORS_URL } = process.env;
 
-module.exports = {
+export default {
    corsUrl: CORS_URL,
    port: PORT || 3100,
    root_db: ROOT_DB || 'root',

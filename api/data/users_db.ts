@@ -1,9 +1,9 @@
 'use strick';
 
+import config from '../config';
 import { TErorr } from 'api/types/types';
-
+// import  Sequelize from 'sequelize';
 const Sequelize = require('sequelize');
-const config = require('../config');
 
 const { root_db, password_db, host_db, port_db } = config;
 

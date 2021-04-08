@@ -1,20 +1,19 @@
 'use strict';
+import path from 'path';
 
-import { TErorr } from './types/types';
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import hbs from 'hbs';
+
+import config from './config';
 import { connectionUsersDB } from './data';
+import { TErorr } from './types/types';
+import router from './router';
 
-const path = require('path');
-const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
-
-const hbs = require('hbs');
 hbs.registerPartials(path.join(__dirname, '../views/partials'));
 
-const router = require('./router');
-const config = require('./config');
-
-module.exports = class BeckEND {
+export default class BeckEND {
    server: any;
 
    constructor() {
@@ -75,4 +74,4 @@ module.exports = class BeckEND {
          console.log('\x1b[36m%s\x1b[0m', `>>> Server started listening on port ${config.port}`);
       });
    }
-};
+}

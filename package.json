@@ -7,7 +7,7 @@
       "build": "tsc ",
       "start": "node dist/start.js",
       "prestart": "npm run build",
-      "server:watch": "ts-node-dev  --rs --respawn --transpile-only   api/start.ts"
+      "dev": "ts-node-dev  --rs --respawn --transpile-only   api/start.ts"
    },
    "author": "Mykhaylo Yevdokymov",
    "license": "ISC",

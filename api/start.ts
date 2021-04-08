@@ -1,5 +1,5 @@
 'use strict';
 
-const BeckEND = require('./server');
+import BeckEND from './server';
 
 new BeckEND().start();

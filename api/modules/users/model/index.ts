@@ -1,7 +1,8 @@
 'use strick';
 
-const { Sequelize, Model } = require('sequelize');
 import { connectionUsersDB } from '../../../data';
+
+const { Sequelize, Model } = require('sequelize');
 
 class User extends Model {}
 
